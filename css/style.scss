@@ -1,0 +1,310 @@
+$baseFontSize:10;
+@function px2rem($px) {
+    @return ($px/$baseFontSize/2) * 1rem;
+}
+
+//@mixin
+@mixin font-dpr($font-size) {
+    font-size: $font-size/2 * 1px;
+    [data-dpr="2"] & {
+        font-size: $font-size/2 * 2 * 1px;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size/2 * 3 * 1px;
+    }
+    @media screen and (min-width: 768px) {
+        .ipad * {
+            font-size: $font-size*1px!important;
+        }
+    }
+}
+
+@mixin transition($amount) {
+    transition: $amount;
+    -moz-transition: $amount;
+    -webkit-transition: $amount;
+    -o-transition: $amount;
+    -ms-transition: $amount;
+}
+
+@mixin animation($amount) {
+    animation: $amount;
+    -webkit-animation: $amount;
+    -moz-animation: $amount;
+    -o-animation: $amount;
+    -ms-animation: $amount;
+}
+
+@mixin transform($amount) {
+    transform: $amount;
+    -webkit-transform: $amount;
+    -moz-transform: $amount;
+    -o-transform: $amount;
+    -ms-transform: $amount;
+}
+
+@mixin transform-origin($amount) {
+    transform-origin: $amount;
+    -webkit-transform-origin: $amount;
+    -moz-transform-origin: $amount;
+    -o-transform-origin: $amount;
+    -ms-transform-origin: $amount;
+}
+
+@mixin border-radius($amount) {
+    border-radius: $amount;
+    -webkit-border-radius: $amount;
+    -moz-border-radius: $amount;
+}
+
+@mixin box-shadow($amount) {
+    box-shadow: $amount;
+    -webkit-box-shadow: $amount;
+    -moz-box-shadow: $amount;
+    -o-box-shadow: $amount;
+    -ms-box-shadow: $amount;
+}
+
+@mixin togray {
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+    filter: gray;
+}
+
+@mixin togray-h {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin m-touch {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+@mixin smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+@mixin appearance {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+* {
+    tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1.5;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
+
+ol,
+li,
+ul {
+    list-style: none
+}
+
+html {
+    -webkit-text-size-adjust: 100%
+}
+
+a,
+div,
+header,
+span {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: '';
+    content: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+input,
+textarea {
+    outline: 0;
+    resize: none
+}
+
+html {
+    -webkit-text-size-adjust: none
+}
+
+a {
+    text-decoration: none;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent
+}
+
+a:active {
+    outline: 0
+}
+
+a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.clearfix::before {
+    content: ' ';
+    display: table;
+}
+
+.clearfix::after {
+    content: ' ';
+    display: table;
+    clear: both;
+}
+
+.fr {
+    float: left;
+}
+
+.fl {
+    float: right;
+}
